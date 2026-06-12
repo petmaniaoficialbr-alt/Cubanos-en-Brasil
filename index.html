@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cubanos en Brasil | Tu puente hacia una nueva vida</title>
+    <meta name="description" content="Plataforma integral para la comunidad cubana en Brasil. Trámites, empleo, vivienda, comunidad y más.">
+    
+    <!-- Estilos CSS (Estilo Apple) -->
+    <style>
+        :root {
+            --primary-blue: #0071e3; /* Azul Apple */
+            --text-dark: #1d1d1f;
+            --text-gray: #86868b;
+            --bg-light: #f5f5f7;
+            --card-bg: #ffffff;
+            --cuba-red: #cf142b;
+            --brazil-green: #009739;
+            --brazil-yellow: #fedd00;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navegación Estilo Apple */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 32px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.85rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            background: linear-gradient(90deg, var(--cuba-red), var(--primary-blue), var(--brazil-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--text-gray);
+            font-weight: 400;
+            margin-bottom: 32px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 980px; /* Forma de píldora Apple */
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0077ed;
+        }
+
+        /* Espacio para Anuncios */
+        .ad-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .ad-banner {
+            background-color: #e8e8ed;
+            border-radius: 12px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            border: 1px dashed #ccc;
+        }
+
+        /* Grid de Funcionalidades */
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+
+        .card-link {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-light);
+            border-top: 1px solid #d2d2d7;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .nav-links { display: none; } /* En móvil ocultamos links por ahora, se puede añadir menú hamburguesa después */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo-container">
+                <img src="logo.jpeg" alt="Logo Cubanos en Brasil">
+                Cubanos en Brasil
+            </a>
+            <div class="nav-links">
+                <a href="tramites.html">Trámites</a>
+                <a href="charada.html">La Charada</a>
+                <a href="directorio.html">Directorio</a>
+                <a href="comunidad.html">Comunidad</a>
+                <a href="login.html">Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Tu puente entre Cuba y Brasil.</h1>
+        <p>Información confiable, trámites paso a paso y una comunidad activa para tu integración.</p>
+        <a href="tramites.html" class="btn-primary">Ver Guías de Trámites</a>
+    </section>
+
+    <!-- ESPACIO PARA ANUNCIOS (Google AdSense / Adsterra) -->
+    <div class="ad-container">
+        <div class="ad-banner">
+            <!-- PEGA AQUÍ EL CÓDIGO DE TU RED DE ANUNCIOS -->
+            Espacio Publicitario (728x90)
+        </div>
+    </div>
+
+    <!-- Grid de Funcionalidades -->
+    <section class="features">
+        
+        <!-- Tarjeta 1: Trámites -->
+        <a href="tramites.html" class="card">
+            <div class="card-icon">📄</div>
+            <h3>Centro de Trámites</h3>
+            <p>Guías detalladas para CPF, RNM, CTPS y Gov.br. Evita multas y bloqueos con nuestro embudo documental.</p>
+            <span class="card-link">Consultar guías &rarr;</span>
+        </a>
+
+        <!-- Tarjeta 2: La Charada -->
+        <a href="charada.html" class="card">
+            <div class="card-icon">🎲</div>
+            <h3>La Charada Cubana</h3>
+            <p>El verso del día, significados del 00 al 99 y la tradición cultural de nuestra tierra.</p>
+            <span class="card-link">Ver versos &rarr;</span>
+        </a>
+
+        <!-- Tarjeta 3: Directorio (Monetizable) -->
+        <a href="directorio.html" class="card">
+            <div class="card-icon">🏪</div>
+            <h3>Directorio de Negocios</h3>
+            <p>Encuentra restaurantes, servicios y emprendimientos cubanos. ¿Tienes un negocio? Destácalo aquí.</p>
+            <span class="card-link">Explorar negocios &rarr;</span>
+        </a>
+
+        <!-- Tarjeta 4: Comunidad -->
+        <a href="comunidad.html" class="card">
+            <div class="card-icon">👥</div>
+            <h3>Comunidad y Empleo</h3>
+            <p>Conecta con otros cubanos, busca empleo, housing y comparte tu experiencia en Brasil.</p>
+            <span class="card-link">Unirse a la red &rarr;</span>
+        </a>
+
+        <!-- Tarjeta 5: Calendario -->
+        <a href="calendario.html" class="card">
+            <div class="card-icon">📅</div>
+            <h3>Calendario Inteligente</h3>
+            <p>Fechas de pago del Bolsa Família, feriados, vencimientos de protocolos y eventos comunitarios.</p>
+            <span class="card-link">Ver calendario &rarr;</span>
+        </a>
+
+        <!-- Tarjeta 6: Servicios Premium (Monetizable) -->
+        <a href="premium.html" class="card" style="border: 2px solid var(--primary-blue);">
+            <div class="card-icon">⭐</div>
+            <h3>Servicios Destacados</h3>
+            <p>Publica tu producto en el Marketplace o destaca tu anuncio. Apoya la plataforma y llega a más personas.</p>
+            <!-- Reemplaza el '#' con tu Link de Pago de Mercado Pago -->
+            <span class="card-link" style="color: var(--cuba-red);">Publicar anuncio (R$ 10,00) &rarr;</span>
+        </a>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Cubanos en Brasil. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px;">
+            <a href="#" style="color: var(--text-gray); text-decoration: none; margin: 0 10px;">Términos y Condiciones</a> | 
+            <a href="#" style="color: var(--text-gray); text-decoration: none; margin: 0 10px;">Política de Privacidad (LGPD)</a>
+        </p>
+    </footer>
+
+</body>
+</html>
